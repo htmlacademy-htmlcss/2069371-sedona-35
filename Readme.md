@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Радыгин Михаил](https://up.htmlacademy.ru/htmlcss/35/user/2069371).
-* Наставник: `Неизвестно`.
+* Наставник: [Никита Сигов](https://htmlacademy.ru/profile/crazer).
 
 ---
 
