@@ -21,9 +21,44 @@ body {
   line-height: 21px;
   background-color: #ffffff;
   color: #000000;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+html {
+  height: 100%;
 }
 
 /*НАВИГАЦИЯ*/
+.navigation {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.navigation-logo {
+  width: 140px;
+  margin-right: 28px;
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+}
+.user-navigation-list {
+  margin: 0;
+  padding: 0;
+  max-width: 300px;
+  margin-left: auto;
+}
+
 .navigation-item {
   list-style: none;
 }
@@ -40,7 +75,6 @@ body {
 .favorites {
   background-color: #7db54f;
   width: 20px;
-  height: 20px;
   border-radius: 10%;
   font-size: 10px;
   font-weight: 400;
@@ -48,6 +82,14 @@ body {
   color: #ffffff;
 }
 
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.hero-logo{
+  display: block;
+  margin: 0 auto;
+}
 .main-index {
   text-align: center;
 }
@@ -78,10 +120,18 @@ body {
 
 .advantages-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .advantages-item {
   background-color: rgba(131, 179, 211, 0.2);
+  width: 400px;
+}
+.advantages-images {
+  width: 800px;
 }
 
 .advantages-title {
@@ -101,8 +151,14 @@ body {
 }
 
 /*СЕРВИСЫ*/
+.services-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 .services-item {
   list-style: none;
+  width: 400px;
 }
 
 .services-title {
@@ -121,6 +177,10 @@ body {
 }
 
 /*Поиск гостиницы*/
+.search-hotel {
+  width: 592px;
+  margin: 0 auto;
+}
 .search-hotel-title {
   text-transform: uppercase;
   font-size: 30px;
@@ -138,10 +198,15 @@ body {
 /*ПОДПИСАТЬСЯ*/
 
 .subscribe {
+  width: 684px;
+  margin: 0 auto;
+}
+.main-subscribe-container{
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
   background-color: rgba(131, 179, 211, 0.2);
-  height: 415px;
-
+  min-height: 415px;
   background-image: url(../images/Subscribe.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -161,16 +226,32 @@ body {
 }
 
 /*ПОДВАЛ*/
+.page-footer-container {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
 .footer-social-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 142px;
+  margin-right: auto;
 }
 
 .footer-phone {
+  width: 331px;
   text-decoration: none;
   color: #000000;
   font-size: 40px;
   font-weight: 400;
   line-height: 40px;
+}
+
+.html-academy-logo {
+  width: 115px;
+  margin-left: auto;
 }
 
 /*Кнопки*/
@@ -218,10 +299,15 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*Хлебные крошки*/
-
+.inner-header {
+  width: 1060px;
+  margin: 0 auto;
+}
 .inner-header-title {
   font-weight: 700;
   font-size: 60px;
@@ -241,7 +327,14 @@ body {
 }
 
 /*Фильтры*/
-
+.filter {
+  width: 1060px;
+  margin: 0 auto;
+}
+.catalog-filter-group {
+  width: 175px;
+  margin-right: 70px;
+}
 .catalog-filter-title {
   font-weight: 700;
   font-size: 20px;
@@ -256,20 +349,41 @@ body {
 
 /*Сортировка*/
 
-.select-contro-title {
+.sorting{
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.select-control-title {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
+  margin-right: 200px;
 }
 
 .select-control {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  width: 292px;
+  margin-right: 70px;
+}
+
+.button-list{
+  list-style: none;
+  padding: 0;
 }
 
 /*Карточки*/
+
+.product{
+  display: flex;
+  flex-direction: column;
+  width: 1060px;
+  margin: 0 auto;
+}
 
 .product-list {
   list-style: none;
@@ -320,4 +434,11 @@ body {
 .dots {
   background-color: transparent;
   color: #000000;
+}
+
+.subscribe-container{
+  display: flex;
+  width: 684px;
+  margin: 0 auto;
+  text-align: center;
 }
