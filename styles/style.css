@@ -131,7 +131,8 @@ html {
   width: 400px;
 }
 .advantages-images {
-  width: 800px;
+  display: block;
+  max-width: 800px;
 }
 
 .advantages-title {
@@ -148,6 +149,12 @@ html {
 .advantages-item-blue {
   background-color: #82b3d3;
   color: #ffffff;
+  display: flex;
+  width: 100%;
+}
+
+.advantages-item-blue:last-child .advantages-images{
+  order: -1;
 }
 
 /*СЕРВИСЫ*/
@@ -299,8 +306,6 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /*Хлебные крошки*/
@@ -327,20 +332,45 @@ html {
 }
 
 /*Фильтры*/
+
+
 .filter {
   width: 1060px;
   margin: 0 auto;
 }
+.catalog-filter-container {
+  display: flex;
+}
 .catalog-filter-group {
-  width: 175px;
+  margin: 0;
+  margin-right: auto;
+  padding: 0;
+  width: 150px;
+  border: none;
+}
+
+.catalog-filter-group:first-child {
+  margin-left: 0;
   margin-right: 70px;
 }
+
 .catalog-filter-title {
+  padding: 0;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
 }
 
+.catalog-filter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.column-right{
+  display: flex;
+  margin-left: auto;
+  flex-direction: column;
+}
 .control {
   font-weight: 400;
   font-size: 18px;
@@ -431,7 +461,7 @@ html {
   color: #000000;
 }
 
-.dots {
+.pagination-dots {
   background-color: transparent;
   color: #000000;
 }
