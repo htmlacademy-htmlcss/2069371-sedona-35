@@ -14,6 +14,17 @@
   font-display: swap;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 body {
   font-family: "PT Sans", sans-serif;
   font-style: normal;
@@ -48,14 +59,15 @@ html {
 }
 
 .navigation-list {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 400px;
+  width: 450px;
 }
-.user-navigation-list {
-  margin: 0;
-  padding: 0;
-  max-width: 300px;
+
+.navigation-user {
+  max-width: 140px;
   margin-left: auto;
 }
 
@@ -70,6 +82,18 @@ html {
   text-align: center;
   text-decoration: none;
   color: #000000;
+  padding: 20px 16px;
+  display: block;
+}
+
+.navigation .button {
+  align-self: center;
+  padding: 8px 36px;
+}
+
+.navigation-user .navigation-link {
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .favorites {
@@ -89,6 +113,8 @@ html {
 .hero-logo{
   display: block;
   margin: 0 auto;
+  padding-top: 51px;
+  padding-bottom: 82px;
 }
 .main-index {
   text-align: center;
@@ -102,18 +128,25 @@ html {
   background-position: bottom center, center;
   background-size: 100% 57.2px, cover;
   background-repeat: no-repeat, no-repeat;
+  margin-bottom: 69px;
 }
 .hero-title {
   text-transform: uppercase;
   line-height: 36px;
   font-size: 30px;
   font-weight: 700;
+  padding: 0 290px 0;
+  margin: 0;
+  margin-bottom: 25px;
 }
 
 .hero-description {
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
+  padding: 0 274px 0 275px;
+  margin: 0;
+  margin-bottom: 90px;
 }
 
 /*ПРЕИМУЩЕСТВА*/
@@ -140,6 +173,15 @@ html {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  margin: 0;
+  padding: 0 112.5px 0;
+  margin-bottom: 62px;
+  margin-top: 103px;
+}
+.advantages-description {
+  padding: 0 85px 0;
+  margin: 0;
+  margin-bottom: 121px;
 }
 
 .light-blue {
@@ -151,6 +193,14 @@ html {
   color: #ffffff;
   display: flex;
   width: 100%;
+}
+
+.advantages-item-blue .advantages-title {
+  margin-top: 92px;
+}
+
+.advantages-item-blue .advantages-description {
+  margin-bottom: 111px;
 }
 
 .advantages-item-blue:last-child .advantages-images{
@@ -166,6 +216,7 @@ html {
 .services-item {
   list-style: none;
   width: 400px;
+  padding: 80px 85px 121px;
 }
 
 .services-title {
@@ -173,6 +224,9 @@ html {
   font-size: 28px;
   font-weight: 700;
   line-height: 28px;
+  margin: 0;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 
 .services-description {
@@ -187,12 +241,16 @@ html {
 .search-hotel {
   width: 592px;
   margin: 0 auto;
+  padding: 96px 0;
 }
 .search-hotel-title {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
+  margin: 0;
+  padding: 0 147.5px 0;
+  margin-bottom: 20px;
 }
 
 .search-hotel-description {
@@ -200,6 +258,8 @@ html {
   font-weight: 400;
   line-height: 26px;
   color: #333333;
+  margin: 0;
+  margin-bottom: 54px;
 }
 
 /*ПОДПИСАТЬСЯ*/
@@ -218,21 +278,33 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 40px;
 }
 .subscribe-title {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
+  margin: 0;
+  padding: 0 140px 0;
+  margin-bottom: 20px;
+  margin-top: 96px;
 }
 
 .subscribe-description {
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
+  margin: 0;
+  margin-bottom: 54px;
+  padding: 0 104.5px 0;
 }
 
 /*ПОДВАЛ*/
+.page-footer {
+  margin-bottom: 30px;
+}
+
 .page-footer-container {
   display: flex;
   width: 1060px;
@@ -245,6 +317,13 @@ html {
   padding: 0;
   width: 142px;
   margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-social-item{
+  width: 47.33px;
+  height: 40px;
 }
 
 .footer-phone {
@@ -306,6 +385,8 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 412px;
+  margin-bottom: 50px;
 }
 
 /*Хлебные крошки*/
@@ -317,10 +398,17 @@ html {
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
+  margin: 0;
+  padding-top: 35px;
+  margin-bottom: 8px;
 }
 
 .breadcrumbs-list {
   list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
 }
 
 .breadcrumbs-link {
@@ -329,6 +417,7 @@ html {
   line-height: 21px;
   color: inherit;
   text-decoration: none;
+
 }
 
 /*Фильтры*/
@@ -370,7 +459,13 @@ html {
   display: flex;
   margin-left: auto;
   flex-direction: column;
+  justify-content: flex-end;
 }
+
+.column-right .button:first-child{
+  margin-bottom: 32px;
+}
+
 .control {
   font-weight: 400;
   font-size: 18px;
@@ -383,6 +478,7 @@ html {
   display: flex;
   width: 1060px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .select-control-title {
@@ -391,6 +487,8 @@ html {
   font-size: 30px;
   line-height: 36px;
   margin-right: 200px;
+  margin-top: 6.5px;
+  margin-bottom: 6.5px;
 }
 
 .select-control {
@@ -399,11 +497,24 @@ html {
   line-height: 21px;
   width: 292px;
   margin-right: 70px;
+  max-height: 49px;
 }
 
 .button-list{
+  margin: 0;
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 160px;
+  gap: 8px;
+}
+.button-item{
+  width: 48px;
+  height: 48px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /*Карточки*/
@@ -417,6 +528,9 @@ html {
 
 .product-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
 }
 
 .product-card-link {
@@ -449,11 +563,30 @@ html {
 /*Пагинация*/
 .pagination {
   list-style: none;
+  width: 400px;
+  margin: 0;
+  margin-right: auto;
+  display: flex;
 }
+
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
+}
+
 .pagination-link {
+  display: block;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
   color: #ffffff;
   text-decoration: none;
   background-color: #82b3d3;
+  border-radius: 4px;
+  padding: 11.36px 0 12.64px 0;
+  text-align: center;
 }
 
 .pagination-current {
@@ -471,4 +604,5 @@ html {
   width: 684px;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 104px;
 }
