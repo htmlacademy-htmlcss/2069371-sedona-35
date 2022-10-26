@@ -212,11 +212,13 @@ html {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 .services-item {
   list-style: none;
   width: 400px;
   padding: 80px 85px 121px;
+  box-sizing: border-box;
 }
 
 .services-title {
@@ -300,6 +302,22 @@ html {
   padding: 0 104.5px 0;
 }
 
+.subscribe-form{
+  display: flex;
+}
+.field {
+  width: 452px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+}
+.subscribe-form .button {
+  width: 232px;
+  height: 52px;
+  border-radius: 0 4px 4px 0;
+}
+
 /*ПОДВАЛ*/
 .page-footer {
   margin-bottom: 30px;
@@ -350,6 +368,8 @@ html {
   color: #ffffff;
   background-color: #756157;
   border: none;
+  border-radius: 4px;
+  padding: 8px 0;
 }
 .button-blue {
   background-color: #82b3d3;
@@ -520,8 +540,6 @@ html {
 /*Карточки*/
 
 .product{
-  display: flex;
-  flex-direction: column;
   width: 1060px;
   margin: 0 auto;
 }
@@ -531,11 +549,39 @@ html {
   margin: 0;
   padding: 0;
   margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  gap: 16px 20px;
+  justify-content: center;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  padding: 20px;
 }
 
 .product-card-link {
   color: #000000;
   text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  grid-column: 1/-1;
+
+}
+
+.product-card-image {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.product-card-title {
+  margin: 0;
+  justify-self: start;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -546,6 +592,7 @@ html {
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+  justify-self: start;
 }
 
 .product-card-price {
@@ -553,11 +600,23 @@ html {
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+  grid-column: 2/3;
+  justify-self: end;
 }
 
 .product-card-rating {
   background-color: #f2f2f2;
   text-align: center;
+  grid-column: 2/3;
+  justify-self: end;
+  margin: 0;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 8px 0;
+  width: 140px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /*Пагинация*/
@@ -565,6 +624,7 @@ html {
   list-style: none;
   width: 400px;
   margin: 0;
+  padding: 0;
   margin-right: auto;
   display: flex;
 }
@@ -605,4 +665,8 @@ html {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 104px;
+}
+
+.field-inner {
+  background: #F2F2F2;
 }
