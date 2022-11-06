@@ -56,6 +56,8 @@ html {
 .navigation-logo {
   width: 140px;
   margin-right: 28px;
+  position: relative;
+  z-index: 1;
 }
 
 .navigation-list {
@@ -63,12 +65,13 @@ html {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 450px;
+  max-width: 450px;
 }
 
 .navigation-user {
   max-width: 140px;
   margin-left: auto;
+  margin-right: 20px;
 }
 
 .navigation-item {
@@ -84,51 +87,108 @@ html {
   color: #000000;
   padding: 20px 16px;
   display: block;
+  position: relative;
+}
+
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+
+.navigation-link:hover {
+  color: #68A2CA;
+}
+
+.navigation-link:active {
+  color:  rgba(131, 179, 211, 0.2);
+}
+
+.navigation-link:hover .navigation-icon {
+  fill: #68A2CA;
+}
+
+.navigation-link:active .navigation-icon {
+  fill:  rgba(131, 179, 211, 0.2);
 }
 
 .navigation .button {
   align-self: center;
-  padding: 8px 36px;
+  padding: 8px 34px;
+}
+
+.navigation .button:hover {
+  color:#ffffff;
+  background-color: #615048;
+}
+
+.navigation .button:active {
+  background-color: #756157;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .navigation-user .navigation-link {
+  padding: 22px 12px;
   min-width: 20px;
   min-height: 20px;
 }
 
 .favorites {
   background-color: #7db54f;
-  width: 20px;
-  border-radius: 10%;
+  padding: 5px 6px;
+  border-radius: 50%;
   font-size: 10px;
   font-weight: 400;
   line-height: 10px;
+  letter-spacing: -0.1em;
   color: #ffffff;
+  position: absolute;
+  top: 12px;
+  right: 4px;
+}
+
+.navigation-link-current::before {
+  content: "";
+  height: 2px;
+  background-color: #756257;
+  bottom: -1px;
+  left: 16px;
+  right: 16px;
+  position: absolute;
+  z-index: 1;
 }
 
 .page-container {
   width: 1200px;
   margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
 .hero-logo{
   display: block;
   margin: 0 auto;
   padding-top: 51px;
   padding-bottom: 82px;
 }
+
 .main-index {
   text-align: center;
 }
 
 .hero-container {
-  height: 485px;
   background-color: rgba(131, 179, 211, 0.2);
   background-image: url(../images/divider.svg),
     url(../images/header-background.jpg);
   background-position: bottom center, center;
   background-size: 100% 57.2px, cover;
   background-repeat: no-repeat, no-repeat;
-  margin-bottom: 69px;
+  margin-bottom: 59px;
+  position: relative;
+  bottom: 10px;
 }
 .hero-title {
   text-transform: uppercase;
@@ -159,9 +219,11 @@ html {
   flex-wrap: wrap;
 }
 
-.advantages-item {
-  background-color: rgba(131, 179, 211, 0.2);
+.advantages-item:not(.advantages-item-blue) {
+  background-color: rgba(131, 179, 211, 0.12);
   width: 400px;
+  padding: 103px 85px 121px;
+  box-sizing: border-box;
 }
 .advantages-images {
   display: block;
@@ -174,18 +236,39 @@ html {
   font-size: 24px;
   line-height: 28px;
   margin: 0;
-  padding: 0 112.5px 0;
+  padding: 0 27.5px;
   margin-bottom: 62px;
-  margin-top: 103px;
-}
-.advantages-description {
-  padding: 0 85px 0;
-  margin: 0;
-  margin-bottom: 121px;
+  position: relative;
 }
 
-.light-blue {
-  background-color: rgba(131, 179, 211, 0.12);
+.advantages-item-blue .advantages-title::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  left: 50%;
+  bottom: -30px;
+  margin-left: -30px;
+}
+
+.advantages-title::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 50%;
+  bottom: -30px;
+  margin-left: -30px;
+}
+
+.advantages-description {
+  margin: 0;
+}
+
+.advantages-list .light-blue {
+  background-color: rgba(131, 179, 211, 0.2);
 }
 
 .advantages-item-blue {
@@ -195,12 +278,8 @@ html {
   width: 100%;
 }
 
-.advantages-item-blue .advantages-title {
-  margin-top: 92px;
-}
-
-.advantages-item-blue .advantages-description {
-  margin-bottom: 111px;
+.advantages-column {
+  padding: 92px 85px 111px;
 }
 
 .advantages-item-blue:last-child .advantages-images{
@@ -214,44 +293,54 @@ html {
   display: flex;
   flex-wrap: wrap;
 }
+
 .services-item {
   list-style: none;
   width: 400px;
-  padding: 80px 85px 121px;
+  padding: 152px 85px 81px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .services-title {
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 28px;
-  margin: 0;
-  margin-top: 80px;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .services-description {
   color: #333333;
+  margin: 0;
 }
 
 .services-item:nth-child(odd) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
+.services-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 150px;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+}
+
 /*Поиск гостиницы*/
 .search-hotel {
   width: 592px;
-  margin: 0 auto;
-  padding: 96px 0;
+  padding: 96px 304px;
 }
+
 .search-hotel-title {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
   margin: 0;
-  padding: 0 147.5px 0;
   margin-bottom: 20px;
 }
 
@@ -264,33 +353,42 @@ html {
   margin-bottom: 54px;
 }
 
+.search-hotel .button {
+  display: block;
+  max-width: 276px;
+  margin: 0 auto;
+  line-height: 36px;
+  font-size: 20px;
+  padding: 8px 50px;
+}
+
+
 /*ПОДПИСАТЬСЯ*/
 
 .subscribe {
   width: 684px;
-  margin: 0 auto;
+  padding: 96px 258px 104px;
 }
+
 .main-subscribe-container{
   display: flex;
   flex-direction: column;
   color: #ffffff;
   background-color: rgba(131, 179, 211, 0.2);
-  min-height: 415px;
+
   background-image: url(../images/Subscribe.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-bottom: 40px;
 }
+
 .subscribe-title {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
   margin: 0;
-  padding: 0 140px 0;
   margin-bottom: 20px;
-  margin-top: 96px;
 }
 
 .subscribe-description {
@@ -305,7 +403,12 @@ html {
 .subscribe-form{
   display: flex;
 }
+
 .field {
+  font-family: 'PT Sans';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
   width: 452px;
   box-sizing: border-box;
   padding: 12px 20px;
@@ -313,14 +416,16 @@ html {
   border: none;
 }
 .subscribe-form .button {
-  width: 232px;
-  height: 52px;
   border-radius: 0 4px 4px 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  padding: 8px 50px;
 }
 
 /*ПОДВАЛ*/
 .page-footer {
-  margin-bottom: 30px;
+  padding: 40px 0 30px 0;
 }
 
 .page-footer-container {
@@ -342,6 +447,25 @@ html {
 .footer-social-item{
   width: 47.33px;
   height: 40px;
+  position: relative;
+}
+
+.footer-social-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83B3D3;
+}
+
+.footer-social-icon:hover {
+  fill: #68A2CA;
+}
+
+.footer-social-icon:active {
+  fill: rgba(104, 162, 202, 0.3);
 }
 
 .footer-phone {
@@ -353,9 +477,37 @@ html {
   line-height: 40px;
 }
 
+.footer-phone:hover,
+.footer-phone:focus{
+  color: #756157;
+}
+
+.footer-phone:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
 .html-academy-logo {
   width: 115px;
   margin-left: auto;
+  position: relative;
+}
+
+.html-academy-logo-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+
+.html-academy-logo-icon:hover {
+  fill:  #756157;
+}
+
+.html-academy-logo-icon:active {
+  fill: rgba(117, 97, 87, 0.3);
 }
 
 /*Кнопки*/
@@ -369,29 +521,68 @@ html {
   background-color: #756157;
   border: none;
   border-radius: 4px;
-  padding: 8px 0;
+  padding: 8px 26px;
+  text-decoration: none;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
 }
+
+.button:hover {
+  background-color: #615048;
+}
+
+.button:active {
+  background-color: #756157;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button:disabled {
+  background-color: #E5E5E5;
+}
+
 .button-blue {
   background-color: #82b3d3;
+  padding: 8px 20px;
 }
 
-.search-hotel-button {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 36px;
+.button-blue:hover {
+  background-color: #68A2CA;
 }
 
-.button-transparent {
-  background-color: transparent;
+.button-blue:active {
+  background-color: #82B3D3;
+}
+
+.column-right .button-transparent {
+  color:#ffffff;
+  background:transparent;
+}
+
+.button-transparent:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button-transparent:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-transparent:focus {
+  outline: 2px solid #68A2CA;
+  outline-offset: -2px;
 }
 
 .button-favorites {
-  background-color: #7db54f;
+  background-color: #7DB54F;
+  padding: 8px 18px;
 }
 
-.product-card-button {
-  text-decoration: none;
+.button-favorites:hover {
+  background-color: #6C9E42;
+}
+
+.button-favorites:active {
+  background-color: #7DB54F;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /*КАТАЛОГ*/
@@ -406,7 +597,9 @@ html {
   background-position: center;
   background-size: cover;
   min-height: 412px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  position: relative;
+  bottom: 10px;
 }
 
 /*Хлебные крошки*/
@@ -431,15 +624,43 @@ html {
   margin-bottom: 40px;
 }
 
+.breadcrumbs-item:not(:last-child){
+  margin-right: 11.3px;
+}
+
+.breadcrumbs-item:first-child .breadcrumbs-link {
+  display: block;
+  width: 13px;
+  height: 15px;
+  background-image: url(../images/catalog/icon-home.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 12px 12px;
+}
+
+.breadcrumbs-item:not(:first-child) .breadcrumbs-link{
+  padding-left: 10.8px;
+  background-image: url(../images/catalog/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 6.39px 9.94px;
+  background-position: center left;
+}
+
 .breadcrumbs-link {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
   color: inherit;
   text-decoration: none;
-
 }
 
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
 /*Фильтры*/
 
 
@@ -486,6 +707,10 @@ html {
   margin-bottom: 32px;
 }
 
+.column-right .button {
+  padding: 8px 50px;
+}
+
 .control {
   font-weight: 400;
   font-size: 18px;
@@ -506,35 +731,55 @@ html {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  margin-right: 200px;
+  margin-right: auto;
   margin-top: 6.5px;
   margin-bottom: 6.5px;
 }
 
 .select-control {
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   width: 292px;
   margin-right: 70px;
   max-height: 49px;
+  border:2px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 0 20px;
 }
 
-.button-list{
-  margin: 0;
-  list-style: none;
-  padding: 0;
+.button-view {
   display: flex;
-  flex-wrap: wrap;
-  width: 160px;
-  gap: 8px;
-}
-.button-item{
-  width: 48px;
-  height: 48px;
-  border: 2px solid #000000;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #E5E5E5;
   border-radius: 4px;
-  box-sizing: border-box;
+  margin-right: 8px;
+}
+.button-view-current {
+  border-color:#000000;
+}
+
+.button-view:last-child {
+  margin-right: 0;
+}
+
+.button-view:hover{
+  border-color:#000000;
+}
+
+.button-view:active {
+  border-color:#000000;
+}
+.button-view:focus {
+ /* сделать браузерный фокус синим */
+  outline: 2px solid #68A2CA;
+  outline-offset: -2px;
 }
 
 /*Карточки*/
@@ -548,11 +793,14 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-bottom: 40px;
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
+  border-bottom: 1px solid #E6E6E6;
 }
+
 
 .product-card {
   display: grid;
@@ -604,6 +852,24 @@ html {
   justify-self: end;
 }
 
+.product-star-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  width: 96px;
+  padding: 0;
+  margin: 0;
+}
+.product-star-item{
+  width: 18px;
+  height: 17px;
+  background-image: url(../images/catalog/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 8px;
+}
+
 .product-card-rating {
   background-color: #f2f2f2;
   text-align: center;
@@ -626,6 +892,7 @@ html {
   margin: 0;
   padding: 0;
   margin-right: auto;
+  margin-bottom: 60px;
   display: flex;
 }
 
@@ -657,14 +924,23 @@ html {
 .pagination-dots {
   background-color: transparent;
   color: #000000;
+  cursor: default;
+}
+
+.pagination-link:not(.pagination-current, .pagination-dots):hover {
+  background-color: #68A2CA;
+}
+
+.pagination-link:not(.pagination-current, .pagination-dots):active {
+  background-color: #82B3D3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .subscribe-container{
   display: flex;
   width: 684px;
-  margin: 0 auto;
+  padding: 96px 258px 104px;
   text-align: center;
-  margin-bottom: 104px;
 }
 
 .field-inner {
