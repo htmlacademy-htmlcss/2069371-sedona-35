@@ -379,7 +379,7 @@ html {
   color: rgba(255, 255, 255, 1);
   background-color: rgba(131, 179, 211, 0.2);
 
-  background-image: url(../images/Subscribe.jpg);
+  background-image: url(../images/subscribe.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -469,9 +469,16 @@ html {
 .footer-social-item{
   width: 47.33px;
   height: 40px;
-  position: relative;
+
 }
 
+.footer-social-link {
+  width: 24px;
+  height: 14px;
+  padding: 13px 11.67px;
+  display: block;
+  position: relative;
+}
 
 .footer-social-icon {
   position: absolute;
@@ -483,11 +490,11 @@ html {
   fill: rgba(131, 179, 211, 1);
 }
 
-.button-icon:hover .footer-social-icon {
+.footer-social-link:hover .footer-social-icon {
   fill: rgba(104, 162, 202, 1);
 }
 
-.button-icon:active .footer-social-icon {
+.footer-social-link:active .footer-social-icon {
   fill: rgba(104, 162, 202, 0.3);
 }
 
